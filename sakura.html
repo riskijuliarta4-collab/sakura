@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Mwehehe </title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Georgia, serif;
+
+    background:
+    linear-gradient(
+    to bottom,
+    #7eb6ff 0%,
+    #a9d3ff 25%,
+    #ffd8b8 65%,
+    #ffc1c1 100%
+    );
+
+}
+
+.scene{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+}
+
+.sun{
+
+    position:absolute;
+
+    right:90px;
+    top:90px;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    circle,
+    #fff6d5,
+    #ffd899
+    );
+
+    box-shadow:
+    0 0 50px rgba(255,220,150,.9),
+    0 0 120px rgba(255,200,120,.5),
+    0 0 220px rgba(255,180,120,.25);
+
+    animation:
+    sunGlow 6s ease-in-out infinite;
+
+}
+
+.sunlight{
+
+    position:absolute;
+
+    right:-200px;
+    top:-100px;
+
+    width:900px;
+    height:900px;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,220,180,.30),
+        rgba(255,200,140,.12),
+        transparent 70%
+    );
+
+}
+
+@keyframes sunGlow{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        box-shadow:
+        0 0 50px rgba(255,220,150,.9),
+        0 0 120px rgba(255,200,120,.5),
+        0 0 220px rgba(255,180,120,.25);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+        box-shadow:
+        0 0 80px rgba(255,220,150,1),
+        0 0 160px rgba(255,200,120,.7),
+        0 0 280px rgba(255,180,120,.4);
+
+    }
+
+}
+
+.cloud{
+
+    position:absolute;
+
+    background:white;
+
+    border-radius:100px;
+
+    opacity:.8;
+    filter:blur(.3px);
+
+}
+
+.cloud::before,
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    background:white;
+
+    border-radius:50%;
+
+}
+
+.cloud1{
+
+    width:180px;
+    height:60px;
+
+    top:120px;
+    left:-250px;
+
+    animation:
+    moveCloud 70s linear infinite;
+
+}
+
+.cloud1::before{
+
+    width:80px;
+    height:80px;
+
+    top:-35px;
+    left:30px;
+
+}
+
+.cloud1::after{
+
+    width:90px;
+    height:90px;
+
+    top:-40px;
+    right:25px;
+
+}
+
+.cloud2{
+
+    width:240px;
+    height:70px;
+
+    top:220px;
+    left:-350px;
+
+    animation:
+    moveCloud 110s linear infinite;
+
+    animation-delay:-25s;
+
+}
+
+.cloud2::before{
+
+    width:90px;
+    height:90px;
+
+    top:-35px;
+    left:45px;
+
+}
+
+.cloud2::after{
+
+    width:100px;
+    height:100px;
+
+    top:-45px;
+    right:40px;
+
+}
+
+@keyframes moveCloud{
+
+    from{
+
+        transform:
+        translateX(-300px);
+
+    }
+
+    to{
+
+        transform:
+        translateX(2200px);
+
+    }
+
+}
+
+.light{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.7);
+
+    filter:blur(2px);
+
+    animation:
+    floatLight linear infinite;
+
+}
+
+@keyframes floatLight{
+
+    from{
+
+        transform:
+        translateY(120vh);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translateY(-150px);
+
+        opacity:0;
+
+    }
+
+}
+
+.ground{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+    height:180px;
+
+    background:
+    linear-gradient(
+    #7fc86d,
+    #5fa950
+    );
+
+}
+
+.flower-scene{
+
+    position:absolute;
+
+    left:50%;
+    bottom:130px;
+
+    transform:
+    translateX(-50%);
+
+    width:500px;
+    height:600px;
+
+}
+
+@keyframes bouquetSway{
+
+    0%{
+
+        transform:
+        translateX(-50%)
+        rotate(-1deg);
+
+    }
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        rotate(1deg);
+
+    }
+
+    100%{
+
+        transform:
+        translateX(-50%)
+        rotate(-1deg);
+
+    }
+
+}
+
+.bouquet{
+
+    position:absolute;
+
+    left:50%;
+    bottom:-180px;
+
+    transform:translateX(-50%);
+
+    width:500px;
+    height:700px;
+
+    transform-origin:center bottom;
+
+    animation:
+    bouquetRise 4s ease forwards,
+    bouquetSway 6s ease-in-out infinite;
+
+    animation-delay:
+    0s,
+    4s;
+
+}
+
+@keyframes bouquetRise{
+
+    from{
+
+        transform:
+        translateX(-50%)
+        translateY(350px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+.stem{
+
+    stroke:#6e4b3a;
+    stroke-width:6;
+    fill:none;
+
+    stroke-linecap:round;
+
+    stroke-dasharray:500;
+    stroke-dashoffset:500;
+
+    animation:
+    growStem 2s ease forwards;
+
+}
+
+.s1{ animation-delay:1s; }
+.s2{ animation-delay:1.4s; }
+.s3{ animation-delay:1.8s; }
+.s4{ animation-delay:2.2s; }
+.s5{ animation-delay:2.6s; }
+
+@keyframes growStem{
+
+    to{
+
+        stroke-dashoffset:0;
+
+    }
+
+}
+
+.leaf{
+
+    opacity:0;
+
+    animation:
+    leafAppear 1s ease forwards;
+
+}
+
+.l1{ animation-delay:2.8s; }
+.l2{ animation-delay:3s; }
+.l3{ animation-delay:3.2s; }
+
+@keyframes leafAppear{
+
+    from{
+
+        opacity:0;
+        transform:scale(0);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+.bud{
+
+    opacity:0;
+
+    animation:
+    budAppear 1s ease forwards,
+    budHide .5s ease forwards;
+
+}
+
+.b1{
+    animation-delay:3.2s,4.5s;
+}
+
+.b2{
+    animation-delay:3.4s,4.8s;
+}
+
+.b3{
+    animation-delay:3.6s,5.1s;
+}
+
+.b4{
+    animation-delay:3.8s,5.4s;
+}
+
+.b5{
+    animation-delay:4s,5.7s;
+}
+
+@keyframes budHide{
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+.flower{
+
+    opacity:0;
+
+    transform-origin:center;
+
+    animation:
+    bloomFlower 1.4s ease forwards;
+
+}
+
+.f1{ animation-delay:4.5s; }
+.f2{ animation-delay:4.8s; }
+.f3{ animation-delay:5.1s; }
+.f4{ animation-delay:5.4s; }
+.f5{ animation-delay:5.7s; }
+
+@keyframes bloomFlower{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        scale(0);
+
+    }
+
+    70%{
+
+        opacity:1;
+
+        transform:
+        scale(1.15);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        scale(1);
+
+    }
+
+}
+
+.flowerGlow{
+
+    filter:
+    drop-shadow(
+    0 0 6px rgba(255,220,230,.4)
+    );
+
+}
+
+@keyframes flowerGlow{
+
+    0%,100%{
+
+        filter:
+        drop-shadow(
+        0 0 4px rgba(255,220,230,.2)
+        );
+
+    }
+
+    50%{
+
+        filter:
+        drop-shadow(
+        0 0 12px rgba(255,220,230,.7)
+        );
+
+    }
+
+}
+
+.f6{ animation-delay:6s; }
+.f7{ animation-delay:6.3s; }
+.f8{ animation-delay:6.6s; }
+.f9{ animation-delay:6.9s; }
+.f10{ animation-delay:7.2s; }
+.f11{ animation-delay:7.5s; }
+.f12{ animation-delay:7.8s; }
+.f13{ animation-delay:8.1s; }
+
+/* bunga kecil */
+
+.filler{
+
+    opacity:0;
+
+    animation:
+    bloomFlower 1s ease forwards;
+
+}
+
+.fi1{ animation-delay:6.5s; }
+.fi2{ animation-delay:6.8s; }
+.fi3{ animation-delay:7.1s; }
+.fi4{ animation-delay:7.4s; }
+
+.petal{
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:
+    radial-gradient(
+        circle at 30% 30%,
+        #fff5fa,
+        #ffd4e7
+    );
+
+    border-radius:
+        100% 100% 100% 0;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    animation:
+    petalFall linear infinite;
+
+}
+
+@keyframes petalFall{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(-100px)
+        translateX(0)
+        rotate(0deg);
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:
+        translateY(50vh)
+        translateX(80px)
+        rotate(240deg);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translateY(110vh)
+        translateX(220px)
+        rotate(540deg);
+
+    }
+
+}
+#secretBtn{
+
+    position:fixed;
+
+    bottom:40px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#ff8fbc;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    display:none;
+
+    z-index:999;
+
+}
+
+#surprise{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.9);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+#surprise img{
+
+    max-width:80%;
+    max-height:80%;
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+<div class="sun"></div>
+<div class="sunlight"></div>
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<div class="ground"></div>
+<div class="flower-scene">
+
+<div class="flower-scene">
+
+<div class="bouquet">
+
+<svg
+viewBox="0 0 500 700"
+width="500"
+height="700">
+
+<path class="stem s1"
+d="M250 620 C250 520 250 380 250 180"/>
+
+<path class="stem s2"
+d="M250 620 C220 520 190 420 150 220"/>
+
+<path class="stem s3"
+d="M250 620 C280 520 320 420 350 220"/>
+
+<path class="stem s4"
+d="M250 620 C200 520 140 450 100 320"/>
+
+<path class="stem s5"
+d="M250 620 C300 520 370 450 400 320"/>
+
+<ellipse
+class="leaf l1"
+cx="210"
+cy="420"
+rx="22"
+ry="12"
+fill="#7ecf7e"
+transform="rotate(-25 210 420)"/>
+
+<ellipse
+class="leaf l2"
+cx="300"
+cy="390"
+rx="22"
+ry="12"
+fill="#7ecf7e"
+transform="rotate(25 300 390)"/>
+
+<ellipse
+class="leaf l3"
+cx="250"
+cy="330"
+rx="22"
+ry="12"
+fill="#85d685"/>
+
+<ellipse
+class="bud b1"
+cx="250"
+cy="170"
+rx="15"
+ry="22"
+fill="#ffc6da"/>
+
+<ellipse
+class="bud b2"
+cx="150"
+cy="210"
+rx="14"
+ry="20"
+fill="#ffd3e2"/>
+
+<ellipse
+class="bud b3"
+cx="350"
+cy="210"
+rx="14"
+ry="20"
+fill="#ffd3e2"/>
+
+<ellipse
+class="bud b4"
+cx="100"
+cy="310"
+rx="13"
+ry="18"
+fill="#ffd3e2"/>
+
+<ellipse
+class="bud b5"
+cx="400"
+cy="310"
+rx="13"
+ry="18"
+fill="#ffd3e2"/>
+
+<g class="flower f1 flowerGlow">
+
+<circle cx="250" cy="170" r="6" fill="#ffe88f"/>
+
+<ellipse cx="250" cy="150" rx="10" ry="16" fill="#ffd7e7"/>
+<ellipse cx="250" cy="190" rx="10" ry="16" fill="#ffd7e7"/>
+
+<ellipse cx="230" cy="170" rx="16" ry="10" fill="#ffd7e7"/>
+<ellipse cx="270" cy="170" rx="16" ry="10" fill="#ffd7e7"/>
+
+<ellipse
+cx="236"
+cy="156"
+rx="11"
+ry="11"
+fill="#ffd7e7"/>
+
+</g>
+
+<g class="flower f2">
+
+<circle cx="150" cy="210" r="5" fill="#ffe88f"/>
+
+<ellipse cx="150" cy="192" rx="9" ry="14" fill="#ffe1ec"/>
+<ellipse cx="150" cy="228" rx="9" ry="14" fill="#ffe1ec"/>
+
+<ellipse cx="132" cy="210" rx="14" ry="9" fill="#ffe1ec"/>
+<ellipse cx="168" cy="210" rx="14" ry="9" fill="#ffe1ec"/>
+
+<ellipse cx="138" cy="198" rx="10" ry="10" fill="#ffe1ec"/>
+
+</g>
+
+<g class="flower f3">
+
+<circle cx="350" cy="210" r="5" fill="#ffe88f"/>
+
+<ellipse cx="350" cy="192" rx="9" ry="14" fill="#ffe1ec"/>
+<ellipse cx="350" cy="228" rx="9" ry="14" fill="#ffe1ec"/>
+
+<ellipse cx="332" cy="210" rx="14" ry="9" fill="#ffe1ec"/>
+<ellipse cx="368" cy="210" rx="14" ry="9" fill="#ffe1ec"/>
+
+<ellipse cx="338" cy="198" rx="10" ry="10" fill="#ffe1ec"/>
+
+</g>
+
+<g class="flower f4">
+
+<circle cx="100" cy="310" r="4" fill="#ffe88f"/>
+
+<ellipse cx="100" cy="295" rx="8" ry="12" fill="#ffe6ef"/>
+<ellipse cx="100" cy="325" rx="8" ry="12" fill="#ffe6ef"/>
+
+<ellipse cx="85" cy="310" rx="12" ry="8" fill="#ffe6ef"/>
+<ellipse cx="115" cy="310" rx="12" ry="8" fill="#ffe6ef"/>
+
+<ellipse cx="90" cy="300" rx="8" ry="8" fill="#ffe6ef"/>
+
+</g>
+
+<g class="flower f5">
+
+<circle cx="400" cy="310" r="4" fill="#ffe88f"/>
+
+<ellipse cx="400" cy="295" rx="8" ry="12" fill="#ffe6ef"/>
+<ellipse cx="400" cy="325" rx="8" ry="12" fill="#ffe6ef"/>
+
+<ellipse cx="385" cy="310" rx="12" ry="8" fill="#ffe6ef"/>
+<ellipse cx="415" cy="310" rx="12" ry="8" fill="#ffe6ef"/>
+
+<ellipse cx="390" cy="300" rx="8" ry="8" fill="#ffe6ef"/>
+
+</g>
+
+<g class="flower f6">
+
+<circle cx="205" cy="145" r="5" fill="#ffe88f"/>
+
+<ellipse cx="205" cy="128" rx="9" ry="14" fill="#ffe1ec"/>
+<ellipse cx="205" cy="162" rx="9" ry="14" fill="#ffe1ec"/>
+
+<ellipse cx="188" cy="145" rx="14" ry="9" fill="#ffe1ec"/>
+<ellipse cx="222" cy="145" rx="14" ry="9" fill="#ffe1ec"/>
+
+<ellipse cx="194" cy="134" rx="10" ry="10" fill="#ffe1ec"/>
+
+</g>
+
+<g class="flower f7">
+
+<circle cx="295" cy="145" r="5" fill="#ffe88f"/>
+
+<ellipse cx="295" cy="128" rx="9" ry="14" fill="#ffe1ec"/>
+<ellipse cx="295" cy="162" rx="9" ry="14" fill="#ffe1ec"/>
+
+<ellipse cx="278" cy="145" rx="14" ry="9" fill="#ffe1ec"/>
+<ellipse cx="312" cy="145" rx="14" ry="9" fill="#ffe1ec"/>
+
+<ellipse cx="284" cy="134" rx="10" ry="10" fill="#ffe1ec"/>
+
+</g>
+
+<g class="flower f8">
+
+<circle cx="205" cy="235" r="5" fill="#ffe88f"/>
+
+<ellipse cx="205" cy="218" rx="9" ry="14" fill="#ffe6ef"/>
+<ellipse cx="205" cy="252" rx="9" ry="14" fill="#ffe6ef"/>
+
+<ellipse cx="188" cy="235" rx="14" ry="9" fill="#ffe6ef"/>
+<ellipse cx="222" cy="235" rx="14" ry="9" fill="#ffe6ef"/>
+
+<ellipse cx="194" cy="224" rx="10" ry="10" fill="#ffe6ef"/>
+
+</g>
+
+<g class="flower f9">
+
+<circle cx="295" cy="235" r="5" fill="#ffe88f"/>
+
+<ellipse cx="295" cy="218" rx="9" ry="14" fill="#ffe6ef"/>
+<ellipse cx="295" cy="252" rx="9" ry="14" fill="#ffe6ef"/>
+
+<ellipse cx="278" cy="235" rx="14" ry="9" fill="#ffe6ef"/>
+<ellipse cx="312" cy="235" rx="14" ry="9" fill="#ffe6ef"/>
+
+<ellipse cx="284" cy="224" rx="10" ry="10" fill="#ffe6ef"/>
+
+</g>
+
+<g class="flower f10">
+
+<circle cx="170" cy="190" r="4" fill="#ffe88f"/>
+
+<ellipse cx="170" cy="175" rx="8" ry="12" fill="#ffe6ef"/>
+<ellipse cx="170" cy="205" rx="8" ry="12" fill="#ffe6ef"/>
+
+<ellipse cx="155" cy="190" rx="12" ry="8" fill="#ffe6ef"/>
+<ellipse cx="185" cy="190" rx="12" ry="8" fill="#ffe6ef"/>
+
+<ellipse cx="160" cy="180" rx="8" ry="8" fill="#ffe6ef"/>
+
+</g>
+
+<g class="flower f11">
+
+<circle cx="330" cy="190" r="4" fill="#ffe88f"/>
+
+<ellipse cx="330" cy="175" rx="8" ry="12" fill="#ffe6ef"/>
+<ellipse cx="330" cy="205" rx="8" ry="12" fill="#ffe6ef"/>
+
+<ellipse cx="315" cy="190" rx="12" ry="8" fill="#ffe6ef"/>
+<ellipse cx="345" cy="190" rx="12" ry="8" fill="#ffe6ef"/>
+
+<ellipse cx="320" cy="180" rx="8" ry="8" fill="#ffe6ef"/>
+
+</g>
+
+<circle class="filler fi1" cx="225" cy="185" r="4" fill="#fff3f8"/>
+<circle class="filler fi2" cx="275" cy="185" r="4" fill="#fff3f8"/>
+
+<circle class="filler fi3" cx="190" cy="225" r="4" fill="#fff3f8"/>
+<circle class="filler fi4" cx="310" cy="225" r="4" fill="#fff3f8"/>
+
+<polygon
+points="
+150,520
+350,520
+420,680
+80,680
+"
+fill="#f6e7d5"/>
+
+<polygon
+points="
+190,520
+310,520
+370,660
+130,660
+"
+fill="#fff4ea"/>
+
+<ellipse
+cx="220"
+cy="560"
+rx="24"
+ry="16"
+fill="#ff8fbc"/>
+
+<ellipse
+cx="280"
+cy="560"
+rx="24"
+ry="16"
+fill="#ff8fbc"/>
+
+<rect
+x="238"
+y="548"
+width="24"
+height="28"
+rx="5"
+fill="#ff6cab"/>
+
+</svg>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+/* partikel cahaya */
+
+for(let i=0;i<40;i++){
+
+    const light=
+    document.createElement("div");
+
+    light.classList.add("light");
+
+    const size=
+    Math.random()*8+1;
+
+    light.style.width=
+    size+"px";
+
+    light.style.height=
+    size+"px";
+
+    light.style.left=
+    Math.random()*100+"vw";
+
+    light.style.top=
+    Math.random()*100+"vh";
+
+    light.style.animationDuration=
+    (Math.random()*12+8)+"s";
+
+    light.style.animationDelay=
+    Math.random()*8+"s";
+
+    document.body.appendChild(light);
+
+}
+
+</script>
+<button id="secretBtn">
+    Klik Aku 🌸
+</button>
+
+<div id="surprise">
+
+    <img
+    src="monkey.jfif"
+    alt="surprise">
+<script>
+
+window.addEventListener("DOMContentLoaded",()=>{
+
+    const btn =
+    document.getElementById("secretBtn");
+
+    const surprise =
+    document.getElementById("surprise");
+
+    if(!btn || !surprise){
+        console.error("Elemen tidak ditemukan");
+        return;
+    }
+
+    setTimeout(()=>{
+
+        btn.style.display="block";
+
+        btn.animate(
+        [
+            {opacity:0},
+            {opacity:1}
+        ],
+        {
+            duration:1000,
+            fill:"forwards"
+        });
+
+    },9000);
+
+    btn.addEventListener("click",()=>{
+
+        surprise.style.display="flex";
+
+    });
+
+});
+
+</script>
+</div>
+
+</body>
+</html>
